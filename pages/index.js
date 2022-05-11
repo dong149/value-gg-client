@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import newStyles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -12,16 +13,34 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
+        <img className={styles.main__logo} src="/nft.png" />
+        {/* <p className={styles.description}>
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
-        </p>
+        </p> */}
 
-        <div className={styles.grid}>
+        <div className={newStyles.mainSearchWrap}>
+          <div className={newStyles.mainSearchNation}>GG</div>
+          <div className={newStyles.mainSearch}>
+            <input
+              className={newStyles.mainSearchForm}
+              placeholder="NFT 이름 ..."
+              onChange={(e) => setName(e.target.value)}
+              onKeyDown={(e) => {
+                handleKeyPress(e);
+              }}
+            />
+            <Image
+              className="SearchButton"
+              src="/search-btn.svg"
+              alt="search-btn"
+              width={24}
+              height={21}
+            />
+          </div>
+        </div>
+
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -49,7 +68,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
@@ -58,12 +77,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

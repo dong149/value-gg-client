@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.main__logo {
+  width: 500px;
+  margin-bottom: 100px;
+}
+
 .footer {
   display: flex;
   flex: 1;
